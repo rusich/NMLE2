@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/nmleStyle.json</file>
+    </qresource>
+</RCC>

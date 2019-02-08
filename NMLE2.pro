@@ -53,6 +53,7 @@ SOURCES += \
     nodeeditor/src/NodeStyle.cpp \
     nodeeditor/src/Properties.cpp \
     nodeeditor/src/StyleCollection.cpp \
+    blocks/cblock.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -103,6 +104,7 @@ HEADERS += \
     nodeeditor/src/NodePainter.hpp \
     nodeeditor/src/Properties.hpp \
     nodeeditor/src/StyleCollection.hpp \
+    blocks/cblock.h
 
 FORMS += \
         mainwindow.ui
@@ -112,4 +114,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    nodeeditor/resources/resources.qrc
+    nodeeditor/resources/resources.qrc \
+    res.qrc
