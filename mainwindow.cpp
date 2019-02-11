@@ -17,8 +17,8 @@ static void setNodeeditorStyle()
   R"(
   {
     "FlowViewStyle": {
-      "BackgroundColor": [255, 255, 240],
-      "FineGridColor": [245, 245, 230],
+      "BackgroundColor": [0, 43, 135],
+      "FineGridColor": "grey",
       "CoarseGridColor": [235, 235, 220]
     }
   }
@@ -51,7 +51,7 @@ static void setNodeeditorStyle()
   {
     "ConnectionStyle": {
       "ConstructionColor": "gray",
-      "NormalColor": "black",
+      "NormalColor": [0,0,0,5],
       "SelectedColor": "gray",
       "SelectedHaloColor": "deepskyblue",
       "HoveredColor": "deepskyblue",
@@ -80,11 +80,28 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 //    setNodeeditorStyle();
-    FlowScene* scene = new FlowScene(registerDataModels());
+    scene = new FlowScene(registerDataModels());
 
-    FlowView* view = new FlowView(scene, this);
+    view = new NFlowView(scene, this);
 
     ui->tabWidget->addTab(view,"Main");
+    QIcon icon;
+    icon.addFile(QString::fromUtf8(":/res/images/qtlogo.png"), QSize(), QIcon::Normal, QIcon::On);
+
+    for (auto const &assoc : scene->registry().registeredModelsCategoryAssociation())
+    {
+      auto item   = new QListWidgetItem(ui->listWidget);
+      item->setText(assoc.first);
+      item->setData(Qt::UserRole, assoc.first);
+      item->setIcon(icon);
+    }
+
+//    QListWidgetItem*  item = new QListWidgetItem("TextDisplayDataModel",ui->listWidget);
+//    item->setData(Qt::UserRole, QVariant("TextDisplayDataModel"));
+
+//    item = new QListWidgetItem("TextSourceDataModel",ui->listWidget);
+//    item->setIcon(icon);
+//    item->setData(Qt::UserRole, QVariant("TextSourceDataModel"));
 
 
 }

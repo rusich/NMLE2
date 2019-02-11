@@ -55,7 +55,8 @@ SOURCES += \
     nodeeditor/src/StyleCollection.cpp \
     blocks/cblock.cpp \
     examples/TextDisplayDataModel.cpp \
-    examples/TextSourceDataModel.cpp
+    examples/TextSourceDataModel.cpp \
+    NFlowView.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -109,7 +110,8 @@ HEADERS += \
     blocks/cblock.h \
     examples/TextData.hpp \
     examples/TextDisplayDataModel.hpp \
-    examples/TextSourceDataModel.hpp
+    examples/TextSourceDataModel.hpp \
+    NFlowView.h
 
 FORMS += \
         mainwindow.ui

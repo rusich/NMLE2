@@ -4,12 +4,13 @@
 #include <QMainWindow>
 #include <nodes/NodeData>
 #include <nodes/FlowScene>
-#include <nodes/FlowView>
+#include "NFlowView.h"
+//#include <nodes/FlowView>
 
 using QtNodes::DataModelRegistry;
 using QtNodes::FlowView;
 using QtNodes::FlowScene;
-static std::shared_ptr<DataModelRegistry> registerDataModels();
+//static std::shared_ptr<DataModelRegistry> registerDataModels();
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +25,8 @@ public:
     ~MainWindow();
 
 private:
+    FlowScene* scene;
+    NFlowView* view;
     Ui::MainWindow *ui;
 
 };
