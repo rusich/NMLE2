@@ -6,6 +6,11 @@
 #include <nodes/FlowScene>
 #include <nodes/FlowView>
 
+using QtNodes::DataModelRegistry;
+using QtNodes::FlowView;
+using QtNodes::FlowScene;
+static std::shared_ptr<DataModelRegistry> registerDataModels();
+
 namespace Ui {
 class MainWindow;
 }
@@ -20,6 +25,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H

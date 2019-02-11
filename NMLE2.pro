@@ -53,7 +53,9 @@ SOURCES += \
     nodeeditor/src/NodeStyle.cpp \
     nodeeditor/src/Properties.cpp \
     nodeeditor/src/StyleCollection.cpp \
-    blocks/cblock.cpp
+    blocks/cblock.cpp \
+    examples/TextDisplayDataModel.cpp \
+    examples/TextSourceDataModel.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -104,7 +106,10 @@ HEADERS += \
     nodeeditor/src/NodePainter.hpp \
     nodeeditor/src/Properties.hpp \
     nodeeditor/src/StyleCollection.hpp \
-    blocks/cblock.h
+    blocks/cblock.h \
+    examples/TextData.hpp \
+    examples/TextDisplayDataModel.hpp \
+    examples/TextSourceDataModel.hpp
 
 FORMS += \
         mainwindow.ui

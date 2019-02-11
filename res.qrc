@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>res/nmleStyle.json</file>
+        <file>res/images/qtlogo.png</file>
     </qresource>
 </RCC>
