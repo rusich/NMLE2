@@ -122,4 +122,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     nodeeditor/resources/resources.qrc \
-    res.qrc
+    res.qrc \
+    styles/darkorange/darkorange.qrc
