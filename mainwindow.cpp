@@ -6,6 +6,7 @@
 #include <nodes/NodeStyle>
 #include <nodes/FlowViewStyle>
 #include <nodes/ConnectionStyle>
+#include "blocks/cblock.h"
 
 using QtNodes::FlowViewStyle;
 using QtNodes::NodeStyle;
@@ -71,6 +72,7 @@ static std::shared_ptr<DataModelRegistry> registerDataModels()
     auto ret = std::make_shared<DataModelRegistry>();
     ret->registerModel<TextSourceDataModel>();
     ret->registerModel<TextDisplayDataModel>();
+    ret->registerModel<CBlock>();
     return ret;
 }
 

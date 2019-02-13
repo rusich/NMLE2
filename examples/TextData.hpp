@@ -18,7 +18,7 @@ public:
   {}
 
   NodeDataType type() const override
-  { return NodeDataType {"text", "Text"}; }
+  { return NodeDataType {"text", "only Text"}; }
 
   QString text() const { return _text; }
 

@@ -3,8 +3,8 @@
 #include <nodes/NodeDataModel>
 #include <nodes/NodeData>
 #include <QLineEdit>
-
 #include <iostream>
+#include "examples/TextData.hpp"
 
 using QtNodes::PortType;
 using QtNodes::PortIndex;
@@ -13,29 +13,6 @@ using QtNodes::NodeDataModel;
 using QtNodes::NodeData;
 using QtNodes::NodeDataType;
 
-/// The class can potentially incapsulate any user data which
-/// need to be transferred within the Node Editor graph
-class TextData : public NodeData
-{
-public:
-
-  TextData() {}
-
-  TextData(QString const &text)
-    : _text(text)
-  {}
-
-  NodeDataType type() const override
-  { return NodeDataType {"text", "Text"}; }
-
-  QString text() const { return _text; }
-
-private:
-
-  QString _text;
-};
-
-
 class CBlock : public NodeDataModel
 {
     Q_OBJECT
@@ -43,10 +20,11 @@ public:
     CBlock();
     virtual ~CBlock() {}
 
-    QString caption() const override { return QString("CBlock"); }
+    QString caption() const override { return QString("CBlock Caption"); }
     bool captionVisible() const override { return true; }
-    static QString Name() { return QString("CBlock"); }
-    QString name() const override { return CBlock::Name(); }
+    bool portCaptionVisible(PortType, PortIndex) const override { return true; }
+    static QString Name() { return QString("CBlock - базовый блок"); }
+    QString name() const override { return QString("CBlockBase"); }
 
 public:
     unsigned int nPorts(PortType portType) const override;
